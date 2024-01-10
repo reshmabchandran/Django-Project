@@ -1,0 +1,32 @@
+*{
+margin:0;
+padding:0;
+}
+.main{
+    background-image: url(../img/re.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 650px;
+
+}
+.img_sec{
+display: flex;
+margin-left:450px ;
+transform: translateY(10%);
+}
+.img_container{
+    display: inline;
+    margin: 10px;
+    position: relative;
+}
+.img_container{
+    margin: 10px 15px;
+    width: 200px;
+    height: 200px;
+    border-radius: 150px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.img_container img:hover{
+    transform: scale(1.1);
+}

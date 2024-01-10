@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="icon" href="../static/index/img/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="../static/admin/css/style.css">
+    <link href="../static/tenant/css/styles.css" rel="stylesheet">
+    <link href="../static/tenant/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+     
+      <link href="../static/tenant/vendor/icons/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
+     
+      <link href="../static/tenant/vendor/select2/css/select2-bootstrap.css" />
+      <link href="../static/tenant/vendor/select2/css/select2.min.css" rel="stylesheet" />
+    <title>Real Estate</title>
+</head>
+<body>
+
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-smile'></i>
+			<span class="text">Real Property</span>
+		</a>
+		<ul class="side-menu top">
+			<li class="active">
+				<a href="{% url 'admin_home' %}">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				
+				<a href="{% url 'add_property_page' %}">
+					<i class='bx bxs-shopping-bag-alt' ></i>
+					<span class="text">Add Property</span>
+				</a>
+				
+			</li>
+			<li>
+				<a href="{% url 'admin_view_property' %}">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">View Property</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-message-dots' ></i>
+					<span class="text">Message</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-group' ></i>
+					<span class="text">Team</span>
+				</a>
+			</li>
+		</ul>
+		
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		
+	
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Admin</h1>
+					
+				</div>
+				
+			</div>
+
+			
+
+			<div class="table-data">
+				<div class="order">
+					<section class="section-padding">
+                        <div class="container">
+                           <div class="row">
+                              <div class="col-lg-5 col-md-5 mx-auto">
+                                 <div class="card padding-card">
+                                    <div class="card-body">
+                                       <h5 class="card-title mb-4">Add Property</h5>
+                                       <form method="post" action="{% url 'admin_add_property' %}" enctype="multipart/form-data">
+                                          {% csrf_token %}
+                                          <div class="form-group">
+                                             <label>Property Name <span class="text-danger">*</span></label>
+                                             <input type="text" class="form-control" placeholder="Enter Property Name" name="pname">
+                                          </div>
+                                          <div class="form-group">
+                                             <label>Address <span class="text-danger">*</span></label>
+                                             <input type="text" class="form-control" placeholder="Enter Address" name="address">
+                                          </div>
+                                          <div class="form-group">
+                                             <label>Location <span class="text-danger">*</span></label>
+                                             <input type="text" class="form-control" placeholder="Enter Location" name="locaton">
+                                          </div>
+                                          <div class="form-group">
+                                             <label>Features <span class="text-danger">*</span></label>
+                                             <input type="text" class="form-control" placeholder="Enter Features" name="features">
+                                          </div>
+                                          
+                                          <div class="form-group">
+                                             <label>Property Image <span class="text-danger">*</span></label>
+                                             <input type="file" class="form-control"  name="image">
+                                          </div>
+                                          
+                                          <input type="submit" class="btn btn-primary btn-lg btn-block" value="Add Property">
+               
+                                          
+                                       </form>
+                                       
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </section>
+				</div>
+				
+			</div>
+		</main>
+		
+	</section>
+	
+	
+
+	<script src="../static/admin/script.js"></script>
+</body>
+</html>
